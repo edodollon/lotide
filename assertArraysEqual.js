@@ -14,11 +14,14 @@ const eqArrays = function(firstArray, secondArray) {
   }
 };
 
-// TEST CASES
-// assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
+const assertArraysEqual = function(array1, array2) {
+  if (eqArrays(array1, array2) === true) {
+    console.log('✅ Arrays are equal ✅');
+  } else {
+    console.log('🛑 Arrays are NOT equal 🛑');
+  }
+};
 
-// (eqArrays([1, 2, 3], [1, 2, 3])); // => true
-// (eqArrays([1, 2, 3], [3, 2, 1])); // => falsconsole.loge
-
-// (eqArrays(["1", "2", "3"], ["1", "2", "3"])); // => true
-// (eqArrays(["1", "2", "3"], ["1", "2", 3])); // => falseconsole.log
+assertArraysEqual([1, 2, 3], [1, 3, 3]); // => should FAIL
+assertArraysEqual([1, 2, 3], [1, 2, 3]); // => should PASS
+assertArraysEqual([1, 2, 3], [1, 2, '3']); // => should FAIL
