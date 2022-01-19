@@ -1,19 +1,3 @@
-const eqArrays = function(firstArray, secondArray) {
-  if (firstArray.length === secondArray.length && firstArray.every((val, index) => val === secondArray[index])) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-const assertArraysEqual = function(array1, array2) {
-  if (eqArrays(array1, array2) === true) {
-    console.log('✅ Arrays are equal ✅');
-  } else {
-    console.log('🛑 Arrays are NOT equal 🛑');
-  }
-};
-
 const letterPositions = function(string) {
   const results = {};
 
@@ -27,11 +11,8 @@ const letterPositions = function(string) {
       results[string[i]] = [i];
     }
   }
-  console.log(results);
+  // console.log(results);
   return results;
 };
-
-letterPositions('LightHouse')
-letterPositions('Edodollon')
-letterPositions('AbB CCcc Jomeljomel')
-// assertArraysEqual(letterPositions("hello").e, [1]);
+   
+module.exports = letterPositions;
